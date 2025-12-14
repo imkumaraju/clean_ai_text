@@ -59,7 +59,8 @@ function removeHiddenCharacters(text) {
     // Remove zero-width characters, soft hyphens, and other invisible Unicode
     // Also includes: zero-width space, zero-width non-joiner, zero-width joiner, 
     // word joiner, soft hyphen, byte order mark, and other formatting characters
-    const cleaned = text.replace(/[\u200B-\u200D\u00AD\uFEFF\u2060\u180E\u034F]/g, () => {
+    // PLUS visible space symbols (␠) and middle dots (·) often used as markers
+    const cleaned = text.replace(/[\u200B-\u200D\u00AD\uFEFF\u2060\u180E\u034F\u2420\u00B7]/g, () => {
         count++;
         return '';
     });
