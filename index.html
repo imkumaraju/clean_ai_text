@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Instantly clean and standardize your AI text. Remove invisible characters, weird spacing, and formatting quirks from ChatGPT or LLM outputs.">
+    <meta name="description"
+        content="Instantly clean and standardize your AI text. Remove invisible characters, weird spacing, and formatting quirks from ChatGPT or LLM outputs.">
     <title>Clena AI Text - Clean & Standardize AI-Generated Text</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="C:/Users/Lenovo/.gemini/antigravity/brain/4e38581d-3dcc-4a2d-ac32-e04f3e846688/clena_ai_logo_1765717780632.png" alt="Clena AI Text Logo" class="logo">
+            <img src="C:/Users/Lenovo/.gemini/antigravity/brain/4e38581d-3dcc-4a2d-ac32-e04f3e846688/clena_ai_logo_1765717780632.png"
+                alt="Clena AI Text Logo" class="logo">
             <h1 class="logo-text">Clena AI Text</h1>
         </div>
         <button id="sampleBtn" class="sample-btn">📋 Show Me Samples</button>
@@ -22,19 +26,16 @@
     <main class="container">
         <div class="banner">
             <h2 class="banner-title">Instantly Clean & Standardize Your AI Text</h2>
-            <p class="banner-description">Remove invisible characters, weird spacing, and formatting quirks from ChatGPT or LLM outputs.</p>
+            <p class="banner-description">Remove invisible characters, weird spacing, and formatting quirks from ChatGPT
+                or LLM outputs.</p>
         </div>
 
         <div class="main-grid">
             <!-- Input Section -->
             <div class="card input-section">
                 <h3 class="card-title">Input Text</h3>
-                <textarea 
-                    id="inputText" 
-                    class="text-area" 
-                    placeholder="Paste your AI-generated text here..."
-                    spellcheck="false"
-                ></textarea>
+                <textarea id="inputText" class="text-area" placeholder="Paste your AI-generated text here..."
+                    spellcheck="false"></textarea>
                 <button id="cleanBtn" class="btn btn-primary">
                     <span class="btn-icon">✨</span>
                     Clean Text
@@ -44,13 +45,8 @@
             <!-- Output Section -->
             <div class="card output-section">
                 <h3 class="card-title">Cleaned Text</h3>
-                <textarea 
-                    id="outputText" 
-                    class="text-area" 
-                    placeholder="Your cleaned text will appear here..."
-                    readonly
-                    spellcheck="false"
-                ></textarea>
+                <textarea id="outputText" class="text-area" placeholder="Your cleaned text will appear here..." readonly
+                    spellcheck="false"></textarea>
                 <button id="copyBtn" class="btn btn-secondary">
                     <span class="btn-icon">📋</span>
                     Copy Output
@@ -67,7 +63,7 @@
                     </label>
                     <label class="checkbox-label">
                         <input type="checkbox" id="opt-nbsp" checked>
-                        <span class="checkbox-text">Convert non-breaking spaces</span>
+                        <span class="checkbox-text">Normalize all spaces & tabs</span>
                     </label>
                     <label class="checkbox-label">
                         <input type="checkbox" id="opt-dashes" checked>
@@ -139,4 +135,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -57,7 +57,9 @@ let stats = {};
 function removeHiddenCharacters(text) {
     let count = 0;
     // Remove zero-width characters, soft hyphens, and other invisible Unicode
-    const cleaned = text.replace(/[\u200B-\u200D\u00AD\uFEFF]/g, () => {
+    // Also includes: zero-width space, zero-width non-joiner, zero-width joiner, 
+    // word joiner, soft hyphen, byte order mark, and other formatting characters
+    const cleaned = text.replace(/[\u200B-\u200D\u00AD\uFEFF\u2060\u180E\u034F]/g, () => {
         count++;
         return '';
     });
@@ -66,7 +68,11 @@ function removeHiddenCharacters(text) {
 
 function convertNonBreakingSpaces(text) {
     let count = 0;
-    const cleaned = text.replace(/\u00A0/g, () => {
+    // Convert ALL Unicode space variants to regular ASCII space
+    // Includes: non-breaking space, tab, em space, en space, thin space, 
+    // hair space, narrow no-break space, medium mathematical space, 
+    // ideographic space, and other Unicode spaces
+    const cleaned = text.replace(/[\u00A0\t\u2000-\u200A\u202F\u205F\u3000]/g, () => {
         count++;
         return ' ';
     });
