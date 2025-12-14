@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Instantly clean and standardize your AI text. Remove invisible characters, weird spacing, and formatting quirks from ChatGPT or LLM outputs.">
+    <title>Clena AI Text - Clean & Standardize AI-Generated Text</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="C:/Users/Lenovo/.gemini/antigravity/brain/4e38581d-3dcc-4a2d-ac32-e04f3e846688/clena_ai_logo_1765717780632.png" alt="Clena AI Text Logo" class="logo">
+            <h1 class="logo-text">Clena AI Text</h1>
+        </div>
+        <button id="sampleBtn" class="sample-btn">📋 Show Me Samples</button>
+    </header>
+
+    <main class="container">
+        <div class="banner">
+            <h2 class="banner-title">Instantly Clean & Standardize Your AI Text</h2>
+            <p class="banner-description">Remove invisible characters, weird spacing, and formatting quirks from ChatGPT or LLM outputs.</p>
+        </div>
+
+        <div class="main-grid">
+            <!-- Input Section -->
+            <div class="card input-section">
+                <h3 class="card-title">Input Text</h3>
+                <textarea 
+                    id="inputText" 
+                    class="text-area" 
+                    placeholder="Paste your AI-generated text here..."
+                    spellcheck="false"
+                ></textarea>
+                <button id="cleanBtn" class="btn btn-primary">
+                    <span class="btn-icon">✨</span>
+                    Clean Text
+                </button>
+            </div>
+
+            <!-- Output Section -->
+            <div class="card output-section">
+                <h3 class="card-title">Cleaned Text</h3>
+                <textarea 
+                    id="outputText" 
+                    class="text-area" 
+                    placeholder="Your cleaned text will appear here..."
+                    readonly
+                    spellcheck="false"
+                ></textarea>
+                <button id="copyBtn" class="btn btn-secondary">
+                    <span class="btn-icon">📋</span>
+                    Copy Output
+                </button>
+            </div>
+
+            <!-- Cleaning Options -->
+            <div class="card options-section">
+                <h3 class="card-title">Cleaning Options</h3>
+                <div class="options-grid">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="opt-hidden" checked>
+                        <span class="checkbox-text">Remove hidden characters</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="opt-nbsp" checked>
+                        <span class="checkbox-text">Convert non-breaking spaces</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="opt-dashes" checked>
+                        <span class="checkbox-text">Normalize dashes</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="opt-quotes" checked>
+                        <span class="checkbox-text">Normalize quotes</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="opt-ellipsis" checked>
+                        <span class="checkbox-text">Convert ellipsis</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="opt-whitespace" checked>
+                        <span class="checkbox-text">Remove trailing whitespace</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="opt-asterisks" checked>
+                        <span class="checkbox-text">Remove asterisks (*)</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="opt-markdown" checked>
+                        <span class="checkbox-text">Remove markdown headings</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="card stats-section">
+                <h3 class="card-title">Cleaning Statistics</h3>
+                <div id="statsContent" class="stats-content">
+                    <p class="stats-empty">No changes detected</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reset-container">
+            <button id="resetBtn" class="btn btn-outline">
+                <span class="btn-icon">🔄</span>
+                Reset All
+            </button>
+        </div>
+    </main>
+
+    <!-- Sample Modal -->
+    <div id="sampleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Choose a Sample Text</h3>
+                <button id="closeModal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <button class="sample-option" data-sample="chatgpt">
+                    <div class="sample-title">ChatGPT Output with Formatting Issues</div>
+                    <div class="sample-desc">Contains smart quotes, em-dashes, and invisible characters</div>
+                </button>
+                <button class="sample-option" data-sample="llm">
+                    <div class="sample-title">LLM Text with Mixed Formatting</div>
+                    <div class="sample-desc">Includes markdown headings, asterisks, and spacing quirks</div>
+                </button>
+                <button class="sample-option" data-sample="complex">
+                    <div class="sample-title">Complex AI Output</div>
+                    <div class="sample-desc">Multiple formatting issues combined</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
