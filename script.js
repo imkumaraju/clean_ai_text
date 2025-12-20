@@ -37,6 +37,9 @@ const sampleModal = document.getElementById('sampleModal');
 const closeModal = document.getElementById('closeModal');
 const sampleOptions = document.querySelectorAll('.sample-option');
 const statsContent = document.getElementById('statsContent');
+const contactForm = document.getElementById('contactForm');
+const sections = document.querySelectorAll('.page-section');
+const navLinks = document.querySelectorAll('.nav-link');
 
 // Cleaning options
 const options = {
@@ -334,12 +337,67 @@ function loadSample(sampleKey) {
     showNotification('Sample text loaded!', 'success');
 }
 
+// Routing logic
+function handleRouting() {
+    const hash = window.location.hash || '#home';
+    const targetId = hash.substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    if (targetSection) {
+        // Hide all sections
+        sections.forEach(section => section.classList.add('hidden'));
+        // Show target section
+        targetSection.classList.remove('hidden');
+
+        // Update nav links active state
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === hash) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+// Contact form handling
+function handleContactSubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('contactEmail').value;
+    const message = document.getElementById('contactMessage').value;
+
+    if (!email || !message) {
+        showNotification('Please fill in all fields', 'warning');
+        return;
+    }
+
+    // Construct mailto link
+    const subject = encodeURIComponent('New Message from No AI Text');
+    const body = encodeURIComponent(`From: ${email}\n\nMessage:\n${message}`);
+    const mailtoLink = `mailto:imkumaraju@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open mail client
+    window.location.href = mailtoLink;
+
+    showNotification('Opening your mail client...', 'success');
+}
+
 // Event listeners
 cleanBtn.addEventListener('click', cleanText);
 copyBtn.addEventListener('click', copyToClipboard);
 resetBtn.addEventListener('click', resetAll);
 sampleBtn.addEventListener('click', openModal);
 closeModal.addEventListener('click', closeModalFunc);
+
+if (contactForm) {
+    contactForm.addEventListener('submit', handleContactSubmit);
+}
+
+// Listen for hash changes
+window.addEventListener('hashchange', handleRouting);
 
 sampleOptions.forEach(option => {
     option.addEventListener('click', () => {
@@ -365,3 +423,4 @@ inputText.addEventListener('keydown', (e) => {
 
 // Initialize
 updateStats();
+handleRouting(); // Initial route check

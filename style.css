@@ -144,6 +144,50 @@ body {
     box-shadow: var(--shadow-pop-lg);
 }
 
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    gap: var(--spacing-md);
+    background: var(--pop-white);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: var(--border-medium) solid var(--pop-black);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-pop-hover);
+    position: relative;
+    z-index: 10;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--pop-black);
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    background: var(--pop-yellow);
+    transform: translateY(-1px);
+}
+
+.nav-link.active {
+    background: var(--pop-black);
+    color: var(--pop-white);
+}
+
+/* Page Section visibility */
+.page-section {
+    display: block;
+    animation: fadeIn var(--transition-normal);
+}
+
+.page-section.hidden {
+    display: none;
+}
+
 /* Container */
 .container {
     max-width: 1400px;
@@ -798,7 +842,136 @@ body {
 }
 
 .faq-question {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--pop-black);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Blogs Section Styling */
+.banner.secondary {
+    background: var(--pop-purple);
+}
+
+.banner.tertiary {
+    background: var(--pop-green);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+}
+
+.blog-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: var(--pop-yellow);
+    color: var(--pop-black);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: var(--border-medium) solid var(--pop-black);
+    border-radius: var(--radius-sm);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    box-shadow: 3px 3px 0px var(--pop-black);
+    z-index: 2;
+}
+
+.blog-excerpt {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-xl);
+}
+
+.btn.small {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9rem;
+    width: fit-content;
+}
+
+/* Contact Us Styling */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form-card {
+    background-image: radial-gradient(var(--pop-blue) 1px, transparent 1px);
+    background-size: 15px 15px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.form-label {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.form-input {
+    padding: var(--spacing-md);
+    border: var(--border-medium) solid var(--pop-black);
+    border-radius: var(--radius-md);
+    background: var(--pop-cream);
+    font-family: inherit;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--pop-blue);
+    box-shadow: 4px 4px 0px var(--pop-blue);
+}
+
+.text-area.small {
+    min-height: 150px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: var(--spacing-md);
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.faq-question {
+    font-size: 1.2rem;
     font-weight: 900;
     color: var(--pop-black);
     margin-bottom: var(--spacing-sm);

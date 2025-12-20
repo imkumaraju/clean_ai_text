@@ -19,327 +19,444 @@
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="logo.png" alt="No AI Text Logo" class="logo">
-            <h1 class="logo-text">No AI Text – Remove AI-Generated Text Markers</h1>
+            <img src="logo.png?v=2" alt="No AI Text Logo" class="logo">
+            <h1 class="logo-text">No AI Text</h1>
         </div>
+        <nav class="nav-menu">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#tools" class="nav-link">Tools</a>
+            <a href="#blogs" class="nav-link">Blogs</a>
+            <a href="#contact" class="nav-link">Contact Us</a>
+        </nav>
         <button id="sampleBtn" class="sample-btn">📋 Show Me Samples</button>
     </header>
 
     <main class="container">
-        <div class="banner">
-            <h2 class="banner-title">Instantly Clean & Standardize Your AI Generated Text</h2>
-            <p class="banner-description">NoAIText helps you clean AI-generated text and make it sound natural, human,
-                and original. If your content was created using tools like ChatGPT, Gemini,
-                or Claude and feels robotic or repetitive, NoAIText removes common AI writing patterns and improves
-                readability-without changing the meaning.
-                Whether you’re a student, content writer, developer, or professional, NoAIText ensures your text feels
-                human-written, clear, and authentic.</p>
-        </div>
-
-        <div class="main-grid">
-            <!-- Input Section -->
-            <div class="card input-section">
-                <h3 class="card-title">Input Text</h3>
-                <textarea id="inputText" class="text-area" placeholder="Paste your AI-generated text here..."
-                    spellcheck="false"></textarea>
-                <button id="cleanBtn" class="btn btn-primary">
-                    <span class="btn-icon">✨</span>
-                    Clean Text
-                </button>
-            </div>
-
-            <!-- Output Section -->
-            <div class="card output-section">
-                <h3 class="card-title">Cleaned Text</h3>
-                <textarea id="outputText" class="text-area" placeholder="Your cleaned text will appear here..." readonly
-                    spellcheck="false"></textarea>
-                <button id="copyBtn" class="btn btn-secondary">
-                    <span class="btn-icon">📋</span>
-                    Copy Output
-                </button>
-            </div>
-
-            <!-- Cleaning Options -->
-            <div class="card options-section">
-                <h3 class="card-title">Cleaning Options</h3>
-                <div class="options-grid">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="opt-hidden" checked>
-                        <span class="checkbox-text">Remove hidden characters</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="opt-nbsp" checked>
-                        <span class="checkbox-text">Normalize all spaces & tabs</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="opt-dashes" checked>
-                        <span class="checkbox-text">Normalize dashes</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="opt-quotes" checked>
-                        <span class="checkbox-text">Normalize quotes</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="opt-ellipsis" checked>
-                        <span class="checkbox-text">Convert ellipsis</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="opt-whitespace" checked>
-                        <span class="checkbox-text">Remove trailing whitespace</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="opt-asterisks" checked>
-                        <span class="checkbox-text">Remove asterisks (*)</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="opt-markdown" checked>
-                        <span class="checkbox-text">Remove markdown headings</span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Statistics Section -->
-            <div class="card stats-section">
-                <h3 class="card-title">Cleaning Statistics</h3>
-                <div id="statsContent" class="stats-content">
-                    <p class="stats-empty">No changes detected</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="reset-container">
-            <button id="resetBtn" class="btn btn-outline">
-                <span class="btn-icon">🔄</span>
-                Reset All
-            </button>
-        </div>
-
-        <!-- Information Sections -->
-        <div class="info-sections">
-            <!-- Why Use Section -->
-            <div class="info-card why-section">
-                <h2 class="info-title">Why Use No AI Text?</h2>
-                <p class="info-description">
-                    NoAIText helps you clean AI-generated text and make it sound natural, human, and original. If your
-                    content was created using tools like ChatGPT, Gemini,
+        <!-- Home Section -->
+        <section id="home" class="page-section">
+            <div class="banner">
+                <h2 class="banner-title">Instantly Clean & Standardize Your AI Generated Text</h2>
+                <p class="banner-description">NoAIText helps you clean AI-generated text and make it sound natural,
+                    human,
+                    and original. If your content was created using tools like ChatGPT, Gemini,
                     or Claude and feels robotic or repetitive, NoAIText removes common AI writing patterns and improves
                     readability-without changing the meaning.
+                    Whether you’re a student, content writer, developer, or professional, NoAIText ensures your text
+                    feels
+                    human-written, clear, and authentic.</p>
+                <div class="banner-actions" style="margin-top: 2rem;">
+                    <a href="#tools" class="btn btn-outline" style="width: fit-content; margin: 0 auto; display: flex;">
+                        <span class="btn-icon">🚀</span>
+                        Get Started - Clean AI Text
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" class="page-section hidden">
+            <div class="banner secondary">
+                <h2 class="banner-title">AI Text Cleaning Tool</h2>
+                <p class="banner-description">Paste your AI-generated text below to instantly clean and standardize it.
                 </p>
             </div>
 
+            <div class="main-grid">
+                <!-- Input Section -->
+                <div class="card input-section">
+                    <h3 class="card-title">Input Text</h3>
+                    <textarea id="inputText" class="text-area" placeholder="Paste your AI-generated text here..."
+                        spellcheck="false"></textarea>
+                    <button id="cleanBtn" class="btn btn-primary">
+                        <span class="btn-icon">✨</span>
+                        Clean Text
+                    </button>
+                </div>
 
-            <!-- Why Choose NoAIText? Section -->
-            <div class="info-card how-section">
-                <h2 class="info-title">Why Choose NoAIText?</h2>
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <div class="feature-label">Remove hidden characters:</div>
-                        <div class="feature-desc">Eliminates invisible characters like zero-width spaces that can break
-                            code and cause formatting issues.</div>
+                <!-- Output Section -->
+                <div class="card output-section">
+                    <h3 class="card-title">Cleaned Text</h3>
+                    <textarea id="outputText" class="text-area" placeholder="Your cleaned text will appear here..."
+                        readonly spellcheck="false"></textarea>
+                    <button id="copyBtn" class="btn btn-secondary">
+                        <span class="btn-icon">📋</span>
+                        Copy Output
+                    </button>
+                </div>
+
+                <!-- Cleaning Options -->
+                <div class="card options-section">
+                    <h3 class="card-title">Cleaning Options</h3>
+                    <div class="options-grid">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="opt-hidden" checked>
+                            <span class="checkbox-text">Remove hidden characters</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="opt-nbsp" checked>
+                            <span class="checkbox-text">Normalize all spaces & tabs</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="opt-dashes" checked>
+                            <span class="checkbox-text">Normalize dashes</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="opt-quotes" checked>
+                            <span class="checkbox-text">Normalize quotes</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="opt-ellipsis" checked>
+                            <span class="checkbox-text">Convert ellipsis</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="opt-whitespace" checked>
+                            <span class="checkbox-text">Remove trailing whitespace</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="opt-asterisks" checked>
+                            <span class="checkbox-text">Remove asterisks (*)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="opt-markdown" checked>
+                            <span class="checkbox-text">Remove markdown headings</span>
+                        </label>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-label">Convert non-breaking spaces:</div>
-                        <div class="feature-desc">Replaces non-breaking spaces with regular spaces.</div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-label">Normalize dashes:</div>
-                        <div class="feature-desc">Converts em-dashes and en-dashes to standard hyphens.</div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-label">Normalize quotes:</div>
-                        <div class="feature-desc">Converts curly/smart quotes to straight quotes, which is essential for
-                            code compatibility.</div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-label">Convert ellipsis:</div>
-                        <div class="feature-desc">Replaces ellipsis character with three dots.</div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-label">Remove trailing whitespace:</div>
-                        <div class="feature-desc">Eliminates whitespace at the end of lines.</div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-label">Remove asterisks (*):</div>
-                        <div class="feature-desc">Removes all asterisk characters from the text.</div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-label">Remove markdown headings:</div>
-                        <div class="feature-desc">Strips markdown heading syntax (# to ######) from the beginning of
-                            lines.</div>
+                </div>
+
+                <!-- Statistics Section -->
+                <div class="card stats-section">
+                    <h3 class="card-title">Cleaning Statistics</h3>
+                    <div id="statsContent" class="stats-content">
+                        <p class="stats-empty">No changes detected</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Who Is This For Section -->
-            <div class="info-card who-section">
-                <h2 class="info-title">Who Is This For?</h2>
-                <div class="audience-list">
-                    <div class="audience-item">
-                        <span class="audience-icon">✅</span>
-                        <div class="audience-content">
-                            <div class="audience-label">Developers:</div>
-                            <div class="audience-desc">Clean code snippets from AI assistants before using them in your
-                                projects.</div>
+            <div class="reset-container">
+                <button id="resetBtn" class="btn btn-outline">
+                    <span class="btn-icon">🔄</span>
+                    Reset All
+                </button>
+            </div>
+
+            <!-- Information Sections -->
+            <div class="info-sections">
+                <!-- Why Use Section -->
+                <div class="info-card why-section">
+                    <h2 class="info-title">Why Use No AI Text?</h2>
+                    <p class="info-description">
+                        NoAIText helps you clean AI-generated text and make it sound natural, human, and original. If
+                        your
+                        content was created using tools like ChatGPT, Gemini,
+                        or Claude and feels robotic or repetitive, NoAIText removes common AI writing patterns and
+                        improves
+                        readability-without changing the meaning.
+                    </p>
+                </div>
+
+
+                <!-- Why Choose NoAIText? Section -->
+                <div class="info-card how-section">
+                    <h2 class="info-title">Why Choose NoAIText?</h2>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-label">Remove hidden characters:</div>
+                            <div class="feature-desc">Eliminates invisible characters like zero-width spaces that can
+                                break
+                                code and cause formatting issues.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-label">Convert non-breaking spaces:</div>
+                            <div class="feature-desc">Replaces non-breaking spaces with regular spaces.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-label">Normalize dashes:</div>
+                            <div class="feature-desc">Converts em-dashes and en-dashes to standard hyphens.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-label">Normalize quotes:</div>
+                            <div class="feature-desc">Converts curly/smart quotes to straight quotes, which is essential
+                                for
+                                code compatibility.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-label">Convert ellipsis:</div>
+                            <div class="feature-desc">Replaces ellipsis character with three dots.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-label">Remove trailing whitespace:</div>
+                            <div class="feature-desc">Eliminates whitespace at the end of lines.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-label">Remove asterisks (*):</div>
+                            <div class="feature-desc">Removes all asterisk characters from the text.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-label">Remove markdown headings:</div>
+                            <div class="feature-desc">Strips markdown heading syntax (# to ######) from the beginning of
+                                lines.</div>
                         </div>
                     </div>
-                    <div class="audience-item">
-                        <span class="audience-icon">✅</span>
-                        <div class="audience-content">
-                            <div class="audience-label">Writers & Editors:</div>
-                            <div class="audience-desc">Ensure text is free from hidden formatting before pasting into
-                                documents or CMSs.</div>
+                </div>
+
+                <!-- Who Is This For Section -->
+                <div class="info-card who-section">
+                    <h2 class="info-title">Who Is This For?</h2>
+                    <div class="audience-list">
+                        <div class="audience-item">
+                            <span class="audience-icon">✅</span>
+                            <div class="audience-content">
+                                <div class="audience-label">Developers:</div>
+                                <div class="audience-desc">Clean code snippets from AI assistants before using them in
+                                    your
+                                    projects.</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="audience-item">
-                        <span class="audience-icon">✅</span>
-                        <div class="audience-content">
-                            <div class="audience-label">Content Creators:</div>
-                            <div class="audience-desc">Avoid formatting issues when moving text between different
-                                platforms.</div>
+                        <div class="audience-item">
+                            <span class="audience-icon">✅</span>
+                            <div class="audience-content">
+                                <div class="audience-label">Writers & Editors:</div>
+                                <div class="audience-desc">Ensure text is free from hidden formatting before pasting
+                                    into
+                                    documents or CMSs.</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="audience-item">
-                        <span class="audience-icon">✅</span>
-                        <div class="audience-content">
-                            <div class="audience-label">Anyone using AI tools:</div>
-                            <div class="audience-desc">Get cleaner, more reliable text from ChatGPT, Claude, or other
-                                LLMs.</div>
+                        <div class="audience-item">
+                            <span class="audience-icon">✅</span>
+                            <div class="audience-content">
+                                <div class="audience-label">Content Creators:</div>
+                                <div class="audience-desc">Avoid formatting issues when moving text between different
+                                    platforms.</div>
+                            </div>
+                        </div>
+                        <div class="audience-item">
+                            <span class="audience-icon">✅</span>
+                            <div class="audience-content">
+                                <div class="audience-label">Anyone using AI tools:</div>
+                                <div class="audience-desc">Get cleaner, more reliable text from ChatGPT, Claude, or
+                                    other
+                                    LLMs.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- SEO Content Sections -->
-        <div class="seo-sections">
+            <!-- SEO Content Sections -->
+            <div class="seo-sections">
 
-            <!-- What Are AI-Generated Text Markers -->
-            <div class="info-card seo-section">
-                <h2 class="info-title">What Are AI-Generated Text Markers?</h2>
-                <p class="info-description">
-                    AI-generated text markers are subtle patterns, phrases, and formatting quirks that reveal content
-                    was created by AI tools like ChatGPT, Claude, or Gemini. These include repetitive sentence
-                    structures, overly formal language, invisible Unicode characters, and predictable transitions. AI
-                    detectors identify these patterns to flag AI-written content. NoAIText analyzes your text and
-                    removes these telltale signs while preserving your original meaning and intent.
-                </p>
-            </div>
+                <!-- What Are AI-Generated Text Markers -->
+                <div class="info-card seo-section">
+                    <h2 class="info-title">What Are AI-Generated Text Markers?</h2>
+                    <p class="info-description">
+                        AI-generated text markers are subtle patterns, phrases, and formatting quirks that reveal
+                        content
+                        was created by AI tools like ChatGPT, Claude, or Gemini. These include repetitive sentence
+                        structures, overly formal language, invisible Unicode characters, and predictable transitions.
+                        AI
+                        detectors identify these patterns to flag AI-written content. NoAIText analyzes your text and
+                        removes these telltale signs while preserving your original meaning and intent.
+                    </p>
+                </div>
 
-            <!-- Why AI-Generated Text Contains Detectable Markers -->
-            <div class="info-card seo-section">
-                <h2 class="info-title">Why AI-Generated Text Contains Detectable Markers</h2>
-                <p class="info-description">
-                    AI language models are trained on vast datasets and generate text based on statistical patterns.
-                    This creates predictable writing styles: overuse of certain phrases, consistent formatting, lack of
-                    personal voice, and specific word choices. Additionally, AI tools often insert invisible formatting
-                    characters when copying text. These patterns make AI content easily detectable by both human readers
-                    and AI detection software, potentially affecting credibility and authenticity.
-                </p>
-            </div>
+                <!-- Why AI-Generated Text Contains Detectable Markers -->
+                <div class="info-card seo-section">
+                    <h2 class="info-title">Why AI-Generated Text Contains Detectable Markers</h2>
+                    <p class="info-description">
+                        AI language models are trained on vast datasets and generate text based on statistical patterns.
+                        This creates predictable writing styles: overuse of certain phrases, consistent formatting, lack
+                        of
+                        personal voice, and specific word choices. Additionally, AI tools often insert invisible
+                        formatting
+                        characters when copying text. These patterns make AI content easily detectable by both human
+                        readers
+                        and AI detection software, potentially affecting credibility and authenticity.
+                    </p>
+                </div>
 
-            <!-- How NoAIText Removes AI Text Markers -->
-            <div class="info-card seo-section">
-                <h2 class="info-title">How NoAIText Removes AI Text Markers</h2>
-                <p class="info-description">
-                    NoAIText uses advanced text processing to eliminate common AI markers. It removes invisible Unicode
-                    characters, normalizes spacing and punctuation, converts smart quotes to standard quotes, strips
-                    markdown formatting, and cleans special characters. The tool processes your text instantly, making
-                    it cleaner and more natural without altering the core message. Simply paste your AI-generated
-                    content, click clean, and get human-like text ready to use.
-                </p>
-            </div>
+                <!-- How NoAIText Removes AI Text Markers -->
+                <div class="info-card seo-section">
+                    <h2 class="info-title">How NoAIText Removes AI Text Markers</h2>
+                    <p class="info-description">
+                        NoAIText uses advanced text processing to eliminate common AI markers. It removes invisible
+                        Unicode
+                        characters, normalizes spacing and punctuation, converts smart quotes to standard quotes, strips
+                        markdown formatting, and cleans special characters. The tool processes your text instantly,
+                        making
+                        it cleaner and more natural without altering the core message. Simply paste your AI-generated
+                        content, click clean, and get human-like text ready to use.
+                    </p>
+                </div>
 
-            <!-- What NoAIText Does Not Change -->
-            <div class="info-card seo-section">
-                <h2 class="info-title">What NoAIText Does Not Change</h2>
-                <p class="info-description">
-                    NoAIText focuses on technical cleaning and formatting fixes—it does not rewrite, paraphrase, or
-                    alter your content's meaning. Your original words, ideas, and message remain intact. The tool only
-                    removes formatting artifacts, invisible characters, and standardizes punctuation. For style
-                    improvements or content rewriting, you'll need to manually edit the text. NoAIText is a formatting
-                    cleaner, not a content editor or AI humanizer tool.
-                </p>
-            </div>
+                <!-- What NoAIText Does Not Change -->
+                <div class="info-card seo-section">
+                    <h2 class="info-title">What NoAIText Does Not Change</h2>
+                    <p class="info-description">
+                        NoAIText focuses on technical cleaning and formatting fixes—it does not rewrite, paraphrase, or
+                        alter your content's meaning. Your original words, ideas, and message remain intact. The tool
+                        only
+                        removes formatting artifacts, invisible characters, and standardizes punctuation. For style
+                        improvements or content rewriting, you'll need to manually edit the text. NoAIText is a
+                        formatting
+                        cleaner, not a content editor or AI humanizer tool.
+                    </p>
+                </div>
 
-            <!-- Benefits of Removing AI Text Markers -->
-            <div class="info-card seo-section">
-                <h2 class="info-title">Benefits of Removing AI Text Markers</h2>
-                <p class="info-description">
-                    Cleaning AI text markers improves readability, professionalism, and compatibility. Your content
-                    becomes easier to paste into documents, websites, and code editors without formatting errors. It
-                    reduces the risk of being flagged by AI detectors when combined with manual editing. Clean text
-                    looks more polished, loads faster, and works better across different platforms. Whether for academic
-                    papers, blog posts, or professional documents, clean text builds trust and credibility.
-                </p>
-            </div>
+                <!-- Benefits of Removing AI Text Markers -->
+                <div class="info-card seo-section">
+                    <h2 class="info-title">Benefits of Removing AI Text Markers</h2>
+                    <p class="info-description">
+                        Cleaning AI text markers improves readability, professionalism, and compatibility. Your content
+                        becomes easier to paste into documents, websites, and code editors without formatting errors. It
+                        reduces the risk of being flagged by AI detectors when combined with manual editing. Clean text
+                        looks more polished, loads faster, and works better across different platforms. Whether for
+                        academic
+                        papers, blog posts, or professional documents, clean text builds trust and credibility.
+                    </p>
+                </div>
 
-            <!-- AI Text Sources Supported -->
-            <div class="info-card seo-section">
-                <h2 class="info-title">AI Text Sources Supported</h2>
-                <p class="info-description">
-                    NoAIText works with text from all major AI platforms: ChatGPT (GPT-3.5, GPT-4, GPT-4o), Google
-                    Gemini, Claude (Anthropic), Microsoft Copilot, Jasper AI, Copy.ai, and other LLM-based tools. It
-                    handles content from AI writing assistants, chatbots, code generators, and content creation tools.
-                    The cleaning process is universal—regardless of which AI tool generated your text, NoAIText removes
-                    common formatting artifacts and invisible characters effectively.
-                </p>
-            </div>
+                <!-- AI Text Sources Supported -->
+                <div class="info-card seo-section">
+                    <h2 class="info-title">AI Text Sources Supported</h2>
+                    <p class="info-description">
+                        NoAIText works with text from all major AI platforms: ChatGPT (GPT-3.5, GPT-4, GPT-4o), Google
+                        Gemini, Claude (Anthropic), Microsoft Copilot, Jasper AI, Copy.ai, and other LLM-based tools. It
+                        handles content from AI writing assistants, chatbots, code generators, and content creation
+                        tools.
+                        The cleaning process is universal—regardless of which AI tool generated your text, NoAIText
+                        removes
+                        common formatting artifacts and invisible characters effectively.
+                    </p>
+                </div>
 
-            <!-- Who Should Use NoAIText -->
-            <div class="info-card seo-section">
-                <h2 class="info-title">Who Should Use NoAIText?</h2>
-                <p class="info-description">
-                    NoAIText is ideal for students cleaning AI-assisted research, content writers polishing AI drafts,
-                    developers copying code snippets from AI assistants, marketers preparing AI-generated copy, bloggers
-                    editing AI content, professionals using AI for emails and reports, and anyone working with
-                    AI-generated text. If you use ChatGPT, Claude, or Gemini for writing assistance, NoAIText ensures
-                    your final output is clean, professional, and free from technical artifacts.
-                </p>
-            </div>
+                <!-- Who Should Use NoAIText -->
+                <div class="info-card seo-section">
+                    <h2 class="info-title">Who Should Use NoAIText?</h2>
+                    <p class="info-description">
+                        NoAIText is ideal for students cleaning AI-assisted research, content writers polishing AI
+                        drafts,
+                        developers copying code snippets from AI assistants, marketers preparing AI-generated copy,
+                        bloggers
+                        editing AI content, professionals using AI for emails and reports, and anyone working with
+                        AI-generated text. If you use ChatGPT, Claude, or Gemini for writing assistance, NoAIText
+                        ensures
+                        your final output is clean, professional, and free from technical artifacts.
+                    </p>
+                </div>
 
-            <!-- Ethical Use and Transparency -->
-            <div class="info-card seo-section">
-                <h2 class="info-title">Ethical Use and Transparency</h2>
-                <p class="info-description">
-                    NoAIText is a formatting tool, not a plagiarism enabler. We encourage ethical AI use: always
-                    disclose AI assistance when required, add your own insights and voice, fact-check AI-generated
-                    information, and follow your institution's or organization's AI policies. Cleaning formatting
-                    doesn't make AI content original—you must still edit, verify, and personalize the text. Use NoAIText
-                    responsibly to improve text quality, not to deceive or misrepresent authorship.
-                </p>
-            </div>
+                <!-- Ethical Use and Transparency -->
+                <div class="info-card seo-section">
+                    <h2 class="info-title">Ethical Use and Transparency</h2>
+                    <p class="info-description">
+                        NoAIText is a formatting tool, not a plagiarism enabler. We encourage ethical AI use: always
+                        disclose AI assistance when required, add your own insights and voice, fact-check AI-generated
+                        information, and follow your institution's or organization's AI policies. Cleaning formatting
+                        doesn't make AI content original—you must still edit, verify, and personalize the text. Use
+                        NoAIText
+                        responsibly to improve text quality, not to deceive or misrepresent authorship.
+                    </p>
+                </div>
 
-            <!-- FAQ Section -->
-            <div class="info-card seo-section faq-section">
-                <h2 class="info-title">Frequently Asked Questions</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">Does NoAIText make AI text undetectable?</div>
-                        <div class="faq-answer">No. NoAIText only removes formatting artifacts and invisible characters.
-                            It doesn't rewrite content or change writing style. To make AI text less detectable, you
-                            must manually edit and personalize it.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Is NoAIText free to use?</div>
-                        <div class="faq-answer">Yes, NoAIText is completely free. All cleaning features work directly in
-                            your browser with no registration, subscriptions, or hidden fees required.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Does NoAIText store my text?</div>
-                        <div class="faq-answer">No. All processing happens locally in your browser. Your text is never
-                            uploaded to servers or stored anywhere. Your content remains completely private and secure.
+                <!-- FAQ Section -->
+                <div class="info-card seo-section faq-section">
+                    <h2 class="info-title">Frequently Asked Questions</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">Does NoAIText make AI text undetectable?</div>
+                            <div class="faq-answer">No. NoAIText only removes formatting artifacts and invisible
+                                characters.
+                                It doesn't rewrite content or change writing style. To make AI text less detectable, you
+                                must manually edit and personalize it.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Is NoAIText free to use?</div>
+                            <div class="faq-answer">Yes, NoAIText is completely free. All cleaning features work
+                                directly in
+                                your browser with no registration, subscriptions, or hidden fees required.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Does NoAIText store my text?</div>
+                            <div class="faq-answer">No. All processing happens locally in your browser. Your text is
+                                never
+                                uploaded to servers or stored anywhere. Your content remains completely private and
+                                secure.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Can I use NoAIText for academic papers?</div>
+                            <div class="faq-answer">Yes, but follow your institution's AI policies. NoAIText cleans
+                                formatting only. You must properly cite AI assistance, add original analysis, and ensure
+                                academic integrity in your work.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Can I use NoAIText for academic papers?</div>
-                        <div class="faq-answer">Yes, but follow your institution's AI policies. NoAIText cleans
-                            formatting only. You must properly cite AI assistance, add original analysis, and ensure
-                            academic integrity in your work.</div>
-                    </div>
                 </div>
+
+            </div>
+        </section>
+
+        <!-- Blogs Section -->
+        <section id="blogs" class="page-section hidden">
+            <div class="banner secondary">
+                <h2 class="banner-title">Our Blogs</h2>
+                <p class="banner-description">Insights, tips, and tutorials on cleaning AI-generated text and improving
+                    content quality.</p>
             </div>
 
-        </div>
+            <div class="blog-grid">
+                <article class="card blog-card">
+                    <div class="blog-badge">New</div>
+                    <h3 class="card-title">How to Humanize AI Content</h3>
+                    <p class="blog-excerpt">Discover the best practices for making your AI-generated text sound more
+                        human and authentic.</p>
+                    <a href="#" class="btn btn-outline small">Read More</a>
+                </article>
+
+                <article class="card blog-card">
+                    <h3 class="card-title">Understanding AI Markers</h3>
+                    <p class="blog-excerpt">A deep dive into the subtle patterns that AI detectors use to flag your
+                        content.</p>
+                    <a href="#" class="btn btn-outline small">Read More</a>
+                </article>
+
+                <article class="card blog-card">
+                    <h3 class="card-title">The Future of AI Writing</h3>
+                    <p class="blog-excerpt">How LLMs are evolving and what it means for content creators and editors.
+                    </p>
+                    <a href="#" class="btn btn-outline small">Read More</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="page-section hidden">
+            <div class="banner tertiary">
+                <h2 class="banner-title">Contact Us</h2>
+                <p class="banner-description">Have questions or feedback? We'd love to hear from you!</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="card contact-form-card">
+                    <h3 class="card-title">Send us a message</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="contactEmail" class="form-label">Your Email</label>
+                            <input type="email" id="contactEmail" class="form-input" placeholder="example@email.com"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage" class="form-label">Your Comments</label>
+                            <textarea id="contactMessage" class="text-area small"
+                                placeholder="Tell us what's on your mind..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-icon">📧</span>
+                            Send Email
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Sample Modal -->
